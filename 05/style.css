@@ -1,0 +1,32 @@
+@charset "UTF-8";
+*{margin: 0;padding: 0;}
+
+/* << 그리드 형태를 자동으로 정의 grid-auto-columns & grid-auto-rows >>
+
+    - grid-template-columns(또는 grid-template-rows)의 ***통제를 벗어난 위치에 있는 트랙의 크기를 지정하는 속성.
+
+    - 속성 이름이 헷갈린다면 -template- 자리에 – auto-가 들어간다고 생각하면 됨
+
+    *** “통제를 벗어난”이 무슨 의미일까요? 아까 이 코드 기억 나시나요?
+
+  .container {grid-template-rows: repeat(3, minmax(100px, auto));}
+
+    각 셀마다 최소 100px의 높이를 확보하고, 컨텐츠가 높이 100px을 넘어가면 알아서 자동으로 늘어나도록(auto) 하려고 저 코드를 썼는데, 우리가 만든 예시가 row가 3개였기 때문에 repeat 회수를 3으로 지정해 줬었지요? 그런데 row 개수를 미리 알 수 없는 경우면 어떻게 할까요? 바로 이 grid-auto-rows가 그 해결책입니다. */
+
+.container{
+    border: 2px solid #000;
+    background-color: rgb(31, 87, 87);
+    padding: 10px;
+}
+
+.item{
+    border: 2px solid #000;
+    background-color: rgb(132, 251, 255);
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    /* grid-template-rows: repeat(3,minmax(200,auto)); */
+     grid-auto-rows: minmax(200px,auto); 
+}

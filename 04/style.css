@@ -1,0 +1,35 @@
+@charset "UTF-8";
+*{margin: 0;padding: 0;}
+
+
+/* 그리드는 플렉스보다 나중에 나왔음 
+플렉스는 한 방향 배치 구현 
+그리드는 두 방향 배치 구현 
+두개를 다 안다면 알맞는 곳에 사용 할 수 있음 
+전체구성은 그리드하고 부분구성은  플렉스로 하는 경우가 많음 */
+
+
+/* https://studiomeal.com/archives/533
+그리드 갭(Grid Gap): Grid 셀 사이의 간격
+*/
+.container{
+    border: 2px solid #000;
+    background-color: rgb(255, 247, 177);
+    padding: 10px;
+}
+
+.item{
+    border: 2px solid #000;
+    background-color: rgb(255, 189, 90);
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,minmax(200px,auto));
+    height: 80vh;
+    column-gap: 20px;
+    row-gap: 20px;
+    gap: 20px;
+
+}

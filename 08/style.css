@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.container {
+    border: 2px solid #000;
+    background-color: rgb(255, 247, 177);
+    padding: 10px;
+}
+
+.item {
+    border: 2px solid #000;
+    background-color: rgb(255, 189, 90);
+}
+
+/* grid-templte-area
+각 영역의 이름을 붙이고, 그 이름을 이용해서 배치하는 방법
+빈칸 만들기 - 마침표는 셀을 빈칸으로 만든다 
+             (마침표 대신 none, .. 등 여러개의 마침표로 셀의 공백을 표현할 수 있다. (즉, 공백없이 마침표(.)를 찍는것은 하나의 마침표를 찍는것과 같이 인식)
+             사이 간격은 한 칸이상만 띄우면 됨 
+             여러칸 
+*/
+
+.container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas:
+        'header header header'
+        'side-a main side-b'
+        '...     ...   ...'
+        'footer footer footer'
+    ;
+    height: 80vh;
+    grid-auto-rows: 100px 1fr 30px 100px;
+
+}
+
+.header{
+    grid-area: header;
+}
+.side-a{
+    grid-area:side-a;
+}
+.side-b{
+    grid-area:side-b;
+}
+.main{
+    grid-area:main;
+}
+.footer{
+    grid-area: footer;
+}

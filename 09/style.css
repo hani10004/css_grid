@@ -1,0 +1,32 @@
+@charset "UTF-8";
+*{margin: 0;padding: 0;}
+
+
+
+.container{
+    border: 2px solid #000;
+    background-color: rgb(255, 247, 177);
+    padding: 10px;
+}
+
+.item{
+    border: 2px solid #000;
+    background-color: rgb(255, 189, 90);
+}
+
+/* grid-auto-flow
+자동 배치 알고리즘
+아이템이 자동 배치되는 흐름을 결정하는 속성 
+
+*/
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25%,auto));
+    grid-template-rows: repeat(5,minmax(50px,auto));
+    grid-auto-flow: dense;
+}
+
+.item:nth-child(2){
+    grid-column:auto/span 3;
+}
