@@ -1,0 +1,29 @@
+@charset "UTF-8";
+*{margin: 0;padding: 0;}
+
+
+
+.container{
+    border: 2px solid #000;
+    background-color: rgb(255, 247, 177);
+    padding: 10px;
+}
+
+.item{
+    border: 2px solid #000;
+    background-color: rgb(255, 189, 90);
+}
+
+/* 
+place-content
+align-content와 justify-content를 같이 쓸 수 있는 단축 속성
+aligh-content , justify-content 순서로 작성하고 만일 하나만 적용할 경우, 두 속성 모두에게 적용됨 
+*/
+.container{
+    display: grid;
+    gap: 10px;
+    height: 100vh;
+   /*  place-content: center; */ /* aligh-content , justify-content // 둘다 center로 적용됨 */
+    place-content: space-between center;
+}
+.item{}
